@@ -3,8 +3,8 @@ require('dotenv').config({silent: true});
 // Initialize Firebase
 var firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: "good-question-52810.firebaseapp.com",
-  databaseURL: "https://good-question-52810.firebaseio.com",
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.FIREBASE_DATABASE_URL,
   storageBucket: "",
 };
 
@@ -12,7 +12,7 @@ const fetch = require('node-fetch');
 const Rx = require('rx');
 const mailgun = require('mailgun-js')({
   apiKey: process.env.MAILGUN_API_KEY,
-  domain: 'sandbox48f01f256473463db6872804212b4bc9.mailgun.org',
+  domain: process.env.MAILGUN_DOMAIN,
 });
 const firebase = require('firebase').initializeApp(firebaseConfig);
 
