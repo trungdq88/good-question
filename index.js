@@ -74,8 +74,8 @@ Rx.Observable
   )
   // Map to items array
   .flatMap(response => Rx.Observable.from(response.items))
-  // Filter "good question"
-  .filter(question => question.body.length < MAX_LENGTH)
+  // Filter unanswered "good question"
+  .filter(question => question.body.length < MAX_LENGTH && !question.is_answered)
   .flatMap(getQuestionStatus)
   // Filter the sent question
   .filter(status => !status.isSent)
