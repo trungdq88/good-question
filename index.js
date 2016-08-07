@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({silent: true});
 
 // Initialize Firebase
 var firebaseConfig = {
