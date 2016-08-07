@@ -9,7 +9,7 @@ Run it (need Node 6):
 
 Set up your mailgun & firebase in `.env` file:
 
-    FIREBASE_API_KEY="your-kep"
-    MAILGUN_API_KEY="your-kep"
-
+    FIREBASE_API_KEY="your-key"
+    MAILGUN_API_KEY="your-key"
+    RECEIVE_EMAIL="your-email"
 

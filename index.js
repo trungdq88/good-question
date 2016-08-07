@@ -16,7 +16,8 @@ const mailgun = require('mailgun-js')({
 });
 const firebase = require('firebase').initializeApp(firebaseConfig);
 
-const FETCH_INTERVAL = 10000; // Fetch every X seconds
+const RECEIVE_EMAIL = process.env.RECEIVE_EMAIL; // Fetch every X seconds
+const FETCH_INTERVAL = 1000 * 60 * 60; // Fetch every 1 hour
 const MAX_LENGTH = 1000; // Good questions are < 1000 chars
 const API_QUESTIONS = 'https://api.stackexchange.com/2.2/questions?order=desc&sort=creation&site=stackoverflow&filter=withbody&tagged=javascript';
 
@@ -26,7 +27,7 @@ const notify= (question) => {
   return Rx.Observable.create(obs => {
     mailgun.messages().send({
       from: 'Good Question from SO <me@dinhquangtrung.net>',
-      to: 'trungdq88@gmail.com',
+      to: RECEIVE_EMAIL,
       subject: '[SO] ' + question.title,
       text: question.body + `<p><a href="${question.link}">Go to question</a></p>`,
     }, function (error, body) {
