@@ -29,7 +29,7 @@ const notify= (question) => {
       from: 'Good Question from SO <me@dinhquangtrung.net>',
       to: RECEIVE_EMAIL,
       subject: '[SO] ' + question.title,
-      text: question.body + `<p><a href="${question.link}">Go to question</a></p>`,
+      html: question.body + `<p><a href="${question.link}">Go to question</a></p>`,
     }, function (error, body) {
       if (!error) {
         obs.onNext(question);
