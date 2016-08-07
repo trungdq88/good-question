@@ -1,5 +1,7 @@
-Small tool to filter the "good question" from Stack Overflow
+good-question
 ===
+
+Small tool to filter the "good questions" from Stack Overflow
 
 Run it (need Node 6):
 
