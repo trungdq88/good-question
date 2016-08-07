@@ -16,3 +16,4 @@ Set up your mailgun & firebase in `.env` file:
     MAILGUN_DOMAIN="your-key"
     RECEIVE_EMAIL="your-email"
 
+
